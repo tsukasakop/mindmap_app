@@ -11,12 +11,14 @@ services:
       - ./django:/code
     command: python manage.py runserver 0.0.0.0:8000
 
-  # frontend:
-  #   container_name: frontend
-  #   build: ./dockerfiles/nuxt_docker
-  #   tty: true
-  #   ports:
-  #     - '3000:3000'
-  #   volumes:
-  #     - ./nuxt:/usr/src/app
-  #   command: [sh, -c, "cd front/ && npm run dev"]
+  frontend:
+    container_name: frontend
+    build: ./dockerfiles/nuxt_docker
+    tty: true
+    environment:
+    - CHOKIDAR_USEPOLLING=true
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./nuxt:/usr/src/app
+    # command: [sh, -c, "cd front/ && npm run dev"]
