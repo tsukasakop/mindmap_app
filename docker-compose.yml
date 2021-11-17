@@ -21,4 +21,4 @@ services:
       - '3000:3000'
     volumes:
       - ./nuxt:/usr/src/app
-    # command: [sh, -c, "cd front/ && npm run dev"]
+    command: [sh, -c, "npm run dev"]
