@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  backend:
-    container_name: backend
-    build: ./dockerfiles/django_docker
-    tty: true
-    ports:
-      - '8000:8000'
-    volumes:
-      - ./django:/code
-    # command: python manage.py runserver 0.0.0.0:8000
+  # backend:
+  #   container_name: backend
+  #   build: ./dockerfiles/django_docker
+  #   tty: true
+  #   ports:
+  #     - '8000:8000'
+  #   volumes:
+  #     - ./django:/code
+  #   command: python manage.py runserver 0.0.0.0:8000
 
   frontend:
     container_name: frontend
@@ -21,4 +21,4 @@ services:
       - '3000:3000'
     volumes:
       - ./nuxt:/usr/src/app
-    command: [sh, -c, "npm run dev"]
+    # command: [sh, -c, "npm run dev"]
